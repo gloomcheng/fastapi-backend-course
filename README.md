@@ -81,3 +81,6 @@ pipenv run alembic upgrade head
 ```
 $ pipenv run fastapi dev app/main.py
 ```
+
+## **Contact**
+For questions or suggestions, please reach out via Issues or email at [gloomcheng@gmail.com](mailto:gloomcheng@gmail.com).
