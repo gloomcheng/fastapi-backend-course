@@ -1,4 +1,4 @@
-# FastAPI Course Example Project
+# Backend Development Course using FastAPI
 
 This is a course example project based on FastAPI with database integration and other essential features. This project aims to help learners understand how to build a complete FastAPI application.
 
