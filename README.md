@@ -61,7 +61,11 @@ pipenv shell
 
 ### Database Migrations
 
-⚠️ **Warning**: Avoid using `Base.metadata.create_all(bind=engine)` for database schema management. This approach can cause issues with initial migrations and won't properly generate `create_table` and other migration commands.
+⚠️ **Warning**: Do not use `Base.metadata.create_all(bind=engine)` for database schema management. Here's why:
+
+- When you modify `models.py` or configure `env.py`, the server will automatically create the database before you attempt to add a new migration version
+- This prevents Alembic from properly generating `create_table` and other migration commands
+- The automatically created database structure may become out of sync with migration history
 
 Instead, use Alembic for database migrations:
 ```bash
