@@ -2,7 +2,6 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-# Database Connection Information
 DATABASE_URL = "sqlite:///./todos.db"
 
 Base = declarative_base()

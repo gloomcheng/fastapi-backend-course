@@ -6,11 +6,13 @@ class TodoBase(BaseModel):
     description: str | None = None
     completed: bool = False
 
+
 class TodoCreate(TodoBase):
     pass
 
+
 class TodoResponse(TodoBase):
     id: int
-    
+
     class Config:
-        from_attributes = True
+        orm_mode = True
