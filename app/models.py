@@ -9,7 +9,9 @@ class Todo(Base):
     title = Column(String(100), nullable=False)
     description = Column(String, nullable=True)
     completed = Column(Boolean, default=False)
+    start_date = Column(Date, nullable=True)
     due_date= Column(Date, nullable=True)
+    status = Column(Boolean, default=True)
 
 class User(Base):
     __tablename__ = "users"
@@ -18,3 +20,4 @@ class User(Base):
     username = Column(String, nullable=False)
     hashed_password = Column(String, nullable=False)
     email = Column(String, unique=True, nullable=False)
+    status = Column(Boolean, default=True)
