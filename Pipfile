@@ -8,6 +8,8 @@ fastapi = {extras = ["sqlalchemy"], version = "*"}
 uvicorn = "*"
 sqlalchemy = "*"
 alembic = "*"
+python-jose = "*"
+passlib = "*"
 
 [dev-packages]
 

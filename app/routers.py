@@ -3,6 +3,7 @@ from sqlalchemy.orm import Session
 from .models import Todo
 from .database import SessionLocal
 from .schemas import TodoCreate, TodoResponse
+from .auth import get_current_user
 
 router = APIRouter()
 
@@ -15,7 +16,11 @@ def get_db():
 
 # Routing
 @router.post("/todos/", response_model=TodoResponse)
-def create_todo(todo: TodoCreate, db: Session = Depends(get_db)):
+def create_todo(
+    todo: TodoCreate, 
+    db: Session = Depends(get_db), 
+    current_user: dict = Depends(get_current_user)
+    ):
     db_todo = Todo(**todo.dict())
     db.add(db_todo)
     db.commit()
